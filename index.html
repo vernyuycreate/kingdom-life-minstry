@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kingdom Life International Ministries</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0e1424;--bg2:#161e33;--ink:#f3eee2;--mute:#a9adbb;--gold:#c9a45c;--line:#ffffff24;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:light){:root:not([data-theme=dark]){--bg:#f4efe4;--bg2:#e9e2d2;--ink:#141a2e;--mute:#5b6070;--gold:#8f6a22;--line:#14192e22}}
+html{scroll-padding-top:70px}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:300 16px/1.65 Outfit,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;line-height:1.05}
+h1{font-size:clamp(2.8rem,10vw,7rem)}h2{font-size:clamp(2rem,6vw,3.6rem);margin-bottom:.6em}h3{font-size:1.6rem}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.bar{background:var(--gold);color:#10131f;font-size:.85rem;padding:6px 14px;text-align:center;overflow:hidden;white-space:nowrap}
+nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:12px 5vw;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.logo{font:600 1.5rem 'Cormorant Garamond',serif;letter-spacing:.04em}.logo i{color:var(--gold)}
+.links{display:flex;gap:22px;align-items:center;font-size:.9rem}
+.links a{position:relative;padding:4px 0}.links a:after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:.35s}
+.links a:hover:after,.links a.on:after{transform:scaleX(1)}
+.btn{display:inline-block;border:1px solid var(--gold);padding:12px 26px;border-radius:40px;background:none;color:var(--ink);font:inherit;cursor:pointer;transition:.3s}
+.btn.fill{background:var(--gold);color:#10131f}.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px #0004}
+.live{display:inline-flex;gap:8px;align-items:center;background:#b3261e;color:#fff;border-radius:30px;padding:6px 14px;font-size:.8rem}.live:before{content:"";width:8px;height:8px;border-radius:50%;background:#fff}
+#burger{display:none;background:none;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:6px 12px;font-size:1rem}
+@media(max-width:900px){#burger{display:block}.links{position:fixed;inset:0 0 0 30%;background:var(--bg2);flex-direction:column;justify-content:center;font-size:1.2rem;transform:translateX(100%);transition:.4s;z-index:30}.links.open{transform:none}}
+section,.pg{padding:90px 6vw}
+.hero{min-height:88vh;display:grid;align-content:center;position:relative;overflow:hidden;color:#f3eee2;background:linear-gradient(#0e142488,#0e1424cc),var(--img,none) center/cover,radial-gradient(120% 80% at 70% 0,#2a3358 0,#0e1424 60%)}.hero p{color:#c8cbd6!important}.hero .btn{color:#f3eee2}.hero .btn.fill{color:#10131f}
+.beam{position:absolute;top:-10%;width:18vw;height:130%;background:linear-gradient(#c9a45c33,transparent 75%);transform:skewX(-18deg);filter:blur(30px);pointer-events:none}
+.hero h1 span{display:block;overflow:hidden}.hero h1 span b{display:block;font-weight:500}
+.hero p{max-width:46ch;margin:22px 0 30px;color:var(--mute);font-size:1.1rem}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:6vw;align-items:center}
+@media(max-width:800px){.split{grid-template-columns:1fr}}
+.plate.has{color:transparent}.plate{aspect-ratio:4/5;border-radius:200px 200px 6px 6px;background:var(--img,none) center/cover,linear-gradient(160deg,#c9a45c55,transparent 45%),var(--bg2);display:grid;place-items:center;font:italic 1.3rem 'Cormorant Garamond',serif;color:var(--mute);text-align:center;padding:30px;clip-path:inset(0 0 0 0)}
+.stats{display:flex;gap:6vw;flex-wrap:wrap;margin-top:30px}.stats b{font:500 3rem 'Cormorant Garamond',serif;color:var(--gold);display:block}
+.alt{background:var(--bg2)}
+.times div{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding:22px 0;font-size:1.1rem}
+.times div:last-child{border-bottom:1px solid var(--line)}.times em{font:italic 1.7rem 'Cormorant Garamond',serif;color:var(--gold)}
+.hs{display:flex;gap:18px;overflow-x:auto;padding-bottom:14px;scroll-snap-type:x mandatory}
+.hs article{flex:0 0 min(300px,78vw);height:380px;scroll-snap-align:start;border-radius:6px;padding:24px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(0deg,#000a,transparent 60%),var(--img,none) center/cover,var(--c)}
+.hs article p{font-size:.9rem;color:#e8e4d8;max-height:0;overflow:hidden;transition:.5s}.hs article:hover p,.hs article:focus-within p{max-height:120px}
+.hs article h3,.hs article a{color:#f3eee2}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 24px}
+input,select,textarea{background:var(--bg2);border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:12px 14px;font:inherit;width:100%}
+.tools input,.tools select{width:auto;flex:1 1 180px}
+.chip{border:1px solid var(--line);background:none;color:var(--ink);border-radius:30px;padding:8px 16px;cursor:pointer}.chip.on{background:var(--gold);color:#10131f;border-color:var(--gold)}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px}
+.sc{border-top:1px solid var(--gold);padding-top:14px}.sc .th{aspect-ratio:16/10;background:var(--img,none) center/cover,linear-gradient(135deg,var(--c),var(--bg2));margin-bottom:12px;border-radius:4px}.sc small{color:var(--mute)}
+.player{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:22px;margin-bottom:34px}
+.screen{aspect-ratio:16/8;background:radial-gradient(circle at 50% 120%,#c9a45c66,#000 70%);border-radius:6px;display:grid;place-items:center;text-align:center;color:#f3eee2;padding:10px}
+.ctl{display:flex;gap:12px;align-items:center;margin-top:14px;flex-wrap:wrap}.ctl input[type=range]{padding:0;border:0;background:none;accent-color:var(--gold)}.ctl .pr{flex:1 1 180px}
+.ev{display:grid;grid-template-columns:90px 1fr auto;gap:20px;align-items:center;border-top:1px solid var(--line);padding:22px 0}
+.ev .d{font:500 2.6rem/1 'Cormorant Garamond',serif;color:var(--gold);text-align:center}.ev .d small{display:block;font:300 .8rem Outfit;color:var(--mute)}
+@media(max-width:600px){.ev{grid-template-columns:64px 1fr}.ev .btn{grid-column:1/-1}}
+form{display:grid;gap:14px;max-width:560px}label{display:grid;gap:6px;font-size:.9rem;color:var(--mute)}
+.err{color:#e5766e;font-size:.82rem;min-height:1em}.ok{border:1px solid var(--gold);padding:18px;border-radius:8px;margin-top:14px}
+.amts{display:flex;gap:10px;flex-wrap:wrap}
+.note{font-size:.8rem;color:var(--mute);border-left:2px solid var(--gold);padding-left:12px;margin:18px 0;max-width:60ch}
+table{width:100%;border-collapse:collapse;font-size:.9rem}td,th{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line)}
+.adm{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:18px;margin:26px 0}.adm div{border:1px solid var(--line);padding:16px;border-radius:8px}.adm b{font:500 2.2rem 'Cormorant Garamond',serif;color:var(--gold);display:block}
+footer{padding:60px 6vw 40px;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;font-size:.9rem;color:var(--mute)}
+#curtain{position:fixed;inset:0;background:var(--bg);z-index:99;display:grid;place-items:center}
+#curtain div{font:italic 500 clamp(1.6rem,6vw,3rem) 'Cormorant Garamond',serif;color:var(--gold)}
+#wipe{position:fixed;inset:0;background:var(--gold);z-index:90;transform:translateY(100%);pointer-events:none}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head>
+<body>
+<div id="curtain"><div>Kingdom Life</div></div><div id="wipe"></div>
+<div class="bar">Sunday Celebration, 9:00 AM &nbsp;|&nbsp; Demo announcement: Night of Encounter this Friday, 10:00 PM</div>
+<nav><a class="logo" href="#home">KL<i>I</i>M</a><button id="burger" aria-label="Menu" aria-expanded="false">Menu</button>
+<div class="links" id="links"><a href="#home">Home</a><a href="#about">About</a><a href="#pastor">Our Pastor</a><a href="#ministries">Ministries</a><a href="#sermons">Sermons</a><a href="#events">Events</a><a href="#testimonies">Testimonies</a><a href="#give">Give</a><a href="#contact">Contact</a><a class="live" href="#live">Watch Live</a></div></nav>
+<main id="app"></main>
+<footer><div><div class="logo">KL<i>I</i>M</div><p>Kingdom Life International Ministries. A fictional ministry created as a web design demonstration.</p></div>
+<div><b>Service times</b><p>Sun 9:00 AM<br>Tue 5:00 PM<br>Thu 5:00 PM<br>Fri 10:00 PM</p></div>
+<div><b>Contact</b><p>vernyuykahnyuy@gmail.com<br>+237 652311022<br>1 Kingdom Avenue (demo address)</p></div>
+<div><b>Stay updated</b><form id="nl" novalidate><input type="email" placeholder="Email address" aria-label="Email"><span class="err"></span><button class="btn fill">Subscribe</button></form></div>
+<div style="grid-column:1/-1">© 2026 KLIM demo. Portfolio project. Built by <a href="https://wa.me/237652311022" target="_blank" rel="noopener" style="text-decoration:underline">Vernyuy Services</a>. <a href="#admin" style="text-decoration:underline">Admin demo</a></div></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const DB={get(k,d){try{return JSON.parse(localStorage.getItem('klim_'+k))??d}catch(e){return d}},set(k,v){try{localStorage.setItem('klim_'+k,JSON.stringify(v))}catch(e){}}};
+const mem={};const get=(k,d)=>DB.get(k,mem[k]??d);const put=(k,v)=>{mem[k]=v;DB.set(k,v)};
+const push=(k,o)=>{const a=get(k,[]);a.push({...o,at:new Date().toLocaleString()});put(k,a)};
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const SER=[["The Weight of Glory","Pastor Daniel Okoye","Faith","Nov 9, 2026","42:10","#7a5a2a"],["Praying Without Ceasing","Pastor Grace Mensah","Prayer","Nov 2, 2026","36:45","#2f4a6d"],["Raised to Walk","Pastor Daniel Okoye","Discipleship","Oct 26, 2026","51:20","#5a3b4a"],["A Table in the Wilderness","Pastor Samuel Adeyemi","Faith","Oct 19, 2026","39:02","#3d5a4a"],["Worship as Warfare","Pastor Grace Mensah","Worship","Oct 12, 2026","44:30","#6a4a2a"],["Kingdom Families","Pastor Daniel Okoye","Family","Oct 5, 2026","47:55","#3a3f6d"]];
+const DEPT=[["Worship","Leading the congregation into God’s presence through song.","#6a4a2a"],["Prayer","Daily intercession for the church, city and nations.","#2f4a6d"],["Evangelism & Outreach","Taking the gospel into streets, campuses and homes.","#3d5a4a"],["Youth","A place for young people to be known and grow.","#5a3b4a"],["Children’s","Safe, joyful teaching for ages 3 to 12.","#7a5a2a"],["Media","Cameras, sound and stories that carry the message.","#3a3f6d"],["Ushering","Welcoming every guest with order and warmth.","#4a4a4a"],["Welfare & Hospitality","Meals, visits and practical help for families in need.","#6d3a3a"]];
+const EV=[["Dec","06","Night of Worship","Main Sanctuary, 6:00 PM"],["Dec","19","Kingdom Leadership Seminar","Conference Hall, 9:00 AM"],["Jan","10","Youth Gathering","Youth Centre, 4:00 PM"],["Jan","24","City Crusade (demo)","Central Grounds, 5:00 PM"]];
+const TES=[["Healed and restored","Adaeze N.","Healing","After two years of illness I returned to work this spring. The church prayed with me every Thursday."],["A door opened","Michael T.","Provision","I had been unemployed for eight months. Within a week of the prayer service, a new role appeared."],["Reconciled","The Bello family","Family","We had not spoken for years. Through counselling and prayer, our home was restored."]];
+const DS=['worship','prayer','evangelism','youth','children','media','ushering','welfare'];const IM=n=>'assets/images/'+n+'.jpg';
+const WA='https://wa.me/237652311022?text='+encodeURIComponent('Hello Vernyuy Services, I saw the Kingdom Life Ministries demo site and I would like you to build me a site like this.');
+const chip=c=>`<button class="chip" data-cat="${c}">${c}</button>`;
+const pages={
+home:()=>`<section class="hero" data-img="assets/images/hero-worship.jpg"><div class="beam" style="left:55%"></div><div class="beam" style="left:72%;width:9vw"></div>
+<div style="position:relative"><p style="margin:0 0 14px;color:var(--gold)">Kingdom Life International Ministries</p>
+<h1><span><b>Raised for</b></span><span><b><i>Kingdom</i> purpose.</b></span></h1>
+<p class="rv">A worshipping community learning to walk with God, serve with joy and carry hope into every city.</p>
+<div class="rv"><a class="btn fill" href="#contact">Join us this Sunday</a> <a class="btn" href="#live">Watch our services</a></div></div></section>
+<section><div class="split"><div class="plate mask" data-img="assets/images/welcome-congregation.jpg">Congregation photograph<br>(placeholder)</div><div><h2>Welcome home.</h2><p>KLIM exists to see lives transformed by the gospel. We gather to worship, study scripture, pray boldly and serve our neighbours. Whoever you are, there is a seat for you.</p>
+<div class="stats"><div><b data-n="25">0</b>years of ministry</div><div><b data-n="40">0</b>nations reached</div><div><b data-n="8">0</b>departments</div></div></div></div></section>
+<section class="alt"><div class="split"><div><h2>A word from our Senior Pastor</h2><p>“Church is not a place we attend. It is a family we become.”</p><p style="margin:16px 0 24px;color:var(--mute)">Pastor Daniel Okoye has led KLIM for two decades, teaching a simple philosophy: love God deeply, know scripture well, and serve people practically.</p><a class="btn" href="#pastor">Read full biography</a></div><div class="plate mask" style="border-radius:6px" data-img="assets/images/pastor-portrait.jpg">Portrait of Pastor Daniel Okoye<br>(placeholder)</div></div></section>
+<section><h2>Vision, mission, values</h2><div class="times"><div><span>Vision</span><em>A transformed generation</em></div><div><span>Mission</span><em>Make disciples who live the gospel</em></div><div><span>Values</span><em>Worship, Word, Prayer, Service</em></div></div></section>
+<section class="alt"><h2>Join us weekly</h2><div class="times"><div><span>Sunday Celebration Service</span><em>9:00 AM</em></div><div><span>Tuesday Bible Study</span><em>5:00 PM</em></div><div><span>Thursday Prayer Service</span><em>5:00 PM</em></div><div><span>Friday Night of Encounter</span><em>10:00 PM</em></div></div></section>
+<section><h2>Ministries</h2><p style="margin-bottom:20px;color:var(--mute)">Scroll sideways. Hover or focus a card to read more.</p><div class="hs" id="hs">${DEPT.map(d=>`<article style="--c:${d[2]}" data-img="${IM('dept-'+DS[DEPT.indexOf(d)])}" tabindex="0"><h3>${d[0]}</h3><p>${d[1]}</p><a href="#ministries" style="text-decoration:underline">Learn more</a></article>`).join('')}</div></section>
+<section class="alt"><h2>Latest messages</h2><div class="sg" id="sgh"></div><p style="margin-top:26px"><a class="btn" href="#sermons">Open sermon archive</a></p></section>
+<section><h2>Testimonies</h2><div id="tes" style="min-height:190px;max-width:700px"></div><div class="tools" style="margin-top:14px"><button class="chip" id="tp">Previous</button><button class="chip" id="tn">Next</button><a class="chip" href="#testimonies">Share yours</a></div></section>
+<section class="alt" style="text-align:center"><h2>Your place is waiting.</h2><p style="margin-bottom:26px;color:var(--mute)">Attend a service, join a team, watch a message or ask us to pray.</p><a class="btn fill" href="#contact">Plan a visit</a> <a class="btn" href="#ministries">Join a team</a> <a class="btn" href="#sermons">Watch a message</a> <a class="btn" href="#prayer">Request prayer</a></section>`,
+about:()=>`<div class="pg"><h1 style="font-size:clamp(2.4rem,8vw,5rem)">Our story</h1><p style="max-width:62ch;margin:20px 0">KLIM began in 2001 as a Tuesday prayer group of twelve people in a rented hall. Today it is a multi-site church with a global online family. (Demo content.)</p>
+<div class="times"><div><span>2001, Founded</span><em>Twelve intercessors</em></div><div><span>2009, First sanctuary</span><em>1,200 seats</em></div><div><span>2017, Outreach launched</span><em>Welfare programme</em></div><div><span>2024, Online campus</span><em>40 nations</em></div></div>
+<h2 style="margin-top:50px">Statement of faith</h2><p style="max-width:62ch">We believe in one God in three persons, the authority of scripture, salvation by grace through faith in Jesus Christ, and the empowering presence of the Holy Spirit.</p></div>`,
+pastor:()=>`<div class="pg"><div class="split"><div class="plate mask" data-img="assets/images/pastor-portrait.jpg">Pastor Daniel Okoye<br>portrait placeholder</div><div><h1 style="font-size:clamp(2.4rem,8vw,5rem)">Pastor Daniel Okoye</h1><p style="margin:18px 0">Daniel answered the call to ministry at nineteen. He has planted three congregations, mentored over two hundred leaders and teaches weekly on discipleship and prayer.</p><h3>Leadership philosophy</h3><p>Lead by serving. Teach plainly. Pray first. Keep people at the centre.</p></div></div></div>`,
+ministries:()=>`<div class="pg"><h1 style="font-size:clamp(2.4rem,8vw,5rem)">Ministries</h1><p style="margin:14px 0 30px;color:var(--mute)">Select a department to read how to join.</p><div class="sg">${DEPT.map((d,i)=>`<div class="sc" style="--c:${d[2]}"><div class="th" data-img="${IM('dept-'+DS[i])}"></div><h3>${d[0]}</h3><p>${d[1]}</p><details style="margin-top:8px"><summary style="cursor:pointer;color:var(--gold)">How to join</summary><p>Meets weekly. Leader: demo contact. Message us on the contact page to get started.</p></details></div>`).join('')}</div></div>`,
+sermons:()=>`<div class="pg"><h1 style="font-size:clamp(2.4rem,8vw,5rem)">Sermons</h1><div class="player" id="pl"><div class="screen"><div><h3 id="pt">Select a message</h3><small>Demo player with simulated playback. No real media is connected.</small></div></div>
+<div class="ctl"><button class="btn fill" id="pp">Play</button><input class="pr" type="range" id="pg" min="0" max="100" value="0" aria-label="Progress"><span id="tm">0:00</span><label style="display:flex;gap:6px;align-items:center">Vol<input type="range" id="vo" min="0" max="100" value="80" style="width:90px"></label><select id="sp" style="width:auto"><option>1x</option><option>1.5x</option><option>2x</option></select></div></div>
+<div class="tools"><input id="q" placeholder="Search sermons" aria-label="Search"><div id="cats">${['All','Faith','Prayer','Worship','Discipleship','Family'].map(chip).join('')}</div></div><div class="sg" id="sg"></div></div>`,
+events:()=>`<div class="pg"><h1 style="font-size:clamp(2.4rem,8vw,5rem)">Events</h1><div style="margin:24px 0">${EV.map((e,i)=>`<div class="ev"><div class="d">${e[1]}<small>${e[0]}</small></div><div><h3>${e[2]}</h3><span style="color:var(--mute)">${e[3]}. Free entry, open to all.</span></div><button class="btn" data-reg="${i}">Register</button></div>`).join('')}</div>
+<div id="rf" hidden><h2>Register</h2><p id="rn" style="color:var(--gold);margin-bottom:12px"></p><form data-form="registrations" novalidate><label>Name<input name="name" required></label><label>Email<input name="email" type="email" required></label><label>Guests<input name="guests" type="number" min="0" max="10" value="0"></label><span class="err"></span><button class="btn fill">Confirm registration</button></form></div></div>`,
+testimonies:()=>`<div class="pg"><h1 style="font-size:clamp(2.4rem,8vw,5rem)">Testimonies</h1><div class="sg" style="margin:30px 0">${TES.map(t=>`<div class="sc"><small>${t[2]}</small><h3>${t[0]}</h3><p>${t[3]}</p><small>${t[1]}</small></div>`).join('')}</div><h2>Share your story</h2><form data-form="testimonies" novalidate><label>Name<input name="name" required></label><label>Title<input name="title" required></label><label>Your testimony<textarea name="story" rows="5" required minlength="30"></textarea></label><label style="flex-direction:row;display:flex;gap:8px"><input type="checkbox" name="public" style="width:auto">I allow public display once approved</label><span class="err"></span><button class="btn fill">Submit testimony</button></form></div>`,
+live:()=>`<div class="pg"><span class="live" style="background:#555">Demo player, not broadcasting</span><h1 style="font-size:clamp(2.4rem,8vw,5rem);margin:14px 0">Watch live</h1><div class="player"><div class="screen"><div><h3>Sunday Celebration Service</h3><small>The next service starts Sunday at 9:00 AM. This is a clearly marked demo player.</small></div></div></div><h2>Previous broadcasts</h2><div class="sg" id="sgl"></div></div>`,
+prayer:()=>`<div class="pg"><h1 style="font-size:clamp(2.4rem,8vw,5rem)">Prayer requests</h1><p style="margin:14px 0 26px;color:var(--mute)">Our prayer team will stand with you.</p><form data-form="prayers" novalidate><label>Name (optional)<input name="name"></label><label>Email (optional)<input name="email" type="email"></label><label>Category<select name="cat"><option>Healing</option><option>Family</option><option>Provision</option><option>Guidance</option><option>Other</option></select></label><label>Your request<textarea name="req" rows="5" required minlength="10"></textarea></label><label style="display:flex;flex-direction:row;gap:8px"><input type="checkbox" name="conf" style="width:auto" checked>Keep this request confidential</label><span class="err"></span><button class="btn fill">Send request</button></form></div>`,
+give:()=>`<div class="pg"><h1 style="font-size:clamp(2.4rem,8vw,5rem)">Give</h1><p class="note">Demonstration only. No payment details are collected and no money is processed.</p><div class="tools" id="gc">${['Tithes','Offerings','Missions','Building','General'].map(c=>`<button class="chip" data-cat="${c}">${c}</button>`).join('')}</div><div class="amts" id="ga">${[25,50,100,250,500].map(a=>`<button class="chip" data-a="${a}">$${a}</button>`).join('')}<input id="ca" type="number" placeholder="Other" style="width:110px" min="1"></div><p style="margin:22px 0">Selected: <b id="gs" style="color:var(--gold)">choose a fund and amount</b></p><button class="btn fill" id="gb">Continue (demo)</button><div id="go"></div></div>`,
+contact:()=>`<div class="pg"><h1 style="font-size:clamp(2.4rem,8vw,5rem)">Contact</h1><div class="split" style="align-items:start;margin-top:26px"><form data-form="contacts" novalidate><label>Name<input name="name" required></label><label>Email<input name="email" type="email" required></label><label>Message<textarea name="msg" rows="5" required></textarea></label><span class="err"></span><button class="btn fill">Send message</button></form><div><h3>Visit us</h3><p style="margin:8px 0 20px">1 Kingdom Avenue (demo address)<br>hello@klim.example</p><div class="plate" style="aspect-ratio:16/10;border-radius:6px" data-img="assets/images/map.jpg">Map placeholder</div></div></div></div>`,
+admin:()=>{if(!sessionStorage.getItem('klimA'))return`<div class="pg"><h1 style="font-size:3rem">Admin demo</h1><p class="note">Frontend demonstration. Login is NOT secure: it only gates the screen, and data lives in this browser’s localStorage. A real system needs a server.</p><form id="lf" novalidate><label>Username<input name="u" value="admin"></label><label>Password<input name="p" type="password" placeholder="demo"></label><span class="err"></span><button class="btn fill">Sign in</button></form></div>`;
+const L=k=>get(k,[]).length,ps=get('prayers',[]),ts=get('testimonies',[]);
+return`<div class="pg"><h1 style="font-size:3rem">Dashboard</h1><p class="note">Demo data only, stored in your browser.</p><div class="adm"><div><b>${SER.length}</b>sermons</div><div><b>${EV.length}</b>events</div><div><b>${L('registrations')}</b>registrations</div><div><b>${L('prayers')}</b>prayers</div><div><b>${L('testimonies')}</b>testimonies</div><div><b>${L('subs')}</b>subscribers</div><div><b>${L('contacts')}</b>messages</div></div>
+<h2>Testimonies awaiting review</h2><table>${ts.map((t,i)=>`<tr><td>${esc(t.title)}<br><small>${esc(t.name)}</small></td><td>${t.status||'pending'}</td><td><button class="chip" data-ap="${i}">Approve</button> <button class="chip" data-rj="${i}">Reject</button></td></tr>`).join('')||'<tr><td>None yet. Submit one on the Testimonies page.</td></tr>'}</table>
+<h2 style="margin-top:36px">Prayer requests</h2><table>${ps.map(p=>`<tr><td>${esc(p.cat)}</td><td>${p.conf?'Confidential':esc(p.req)}</td><td>${p.at}</td></tr>`).join('')||'<tr><td>No requests yet.</td></tr>'}</table>
+<p style="margin-top:30px"><button class="btn" id="lo">Sign out</button> <button class="btn" id="rs">Reset demo data</button></p></div>`}};
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const cards=(list)=>list.map(s=>`<div class="sc" style="--c:${s[5]}"><div class="th" data-img="${IM('sermon-'+(SER.indexOf(s)+1))}"></div><small>${s[2]}, ${s[3]}, ${s[4]}</small><h3>${s[0]}</h3><small>${s[1]}</small><div class="tools" style="margin:10px 0 0"><button class="chip" data-w="${esc(s[0])}">Watch now</button><button class="chip" data-w="${esc(s[0])}">Listen now</button></div></div>`).join('')||'<p>No sermons match. Try a different search or category.</p>';
+function bindForms(){$$('form[data-form]').forEach(f=>f.onsubmit=e=>{e.preventDefault();const d=Object.fromEntries(new FormData(f)),er=$('.err',f);
+const bad=$$('[required]',f).find(i=>!i.value.trim()||(i.minLength>0&&i.value.length<i.minLength))||$$('input[type=email]',f).find(i=>i.value&&!/^\S+@\S+\.\S+$/.test(i.value));
+if(bad){er.textContent='Please complete "'+(bad.closest('label')?.firstChild.textContent||bad.name)+'" correctly.';bad.focus();return}
+d.conf=!!f.conf?.checked;d.public=!!f.public?.checked;push(f.dataset.form,d);f.reset();er.textContent='';
+const m=document.createElement('div');m.className='ok';m.setAttribute('role','status');m.textContent='Received. This is a demo, so it was saved only in your browser.';f.append(m);gsap.from(m,{y:16,opacity:0,duration:.5})})}
+function player(){const pp=$('#pp');if(!pp)return;let t=null,p=0,len=0;const sp=()=>parseFloat($('#sp').value);
+const fmt=s=>Math.floor(s/60)+':'+String(Math.floor(s%60)).padStart(2,'0');
+const stop=()=>{clearInterval(t);t=null;pp.textContent='Play'};
+const start=()=>{if(!len)return;pp.textContent='Pause';t=setInterval(()=>{p+=sp();if(p>=len){p=len;stop()}$('#pg').value=p/len*100;$('#tm').textContent=fmt(p)+' / '+fmt(len)},1000)};
+pp.onclick=()=>t?stop():start();$('#pg').oninput=e=>{p=len*e.target.value/100;$('#tm').textContent=fmt(p)+' / '+fmt(len)};
+window.loadSer=n=>{const s=SER.find(x=>x[0]===n);if(!s)return;stop();const [m,sec]=s[4].split(':').map(Number);len=m*60+sec;p=0;$('#pt').textContent=s[0]+' ('+s[1]+')';$('#pg').value=0;$('#tm').textContent='0:00 / '+s[4];$('#pl').scrollIntoView({behavior:'smooth',block:'center'});start()}}
+function sermons(){const g=$('#sg');if(!g)return;let c='All';const r=()=>{const q=$('#q').value.toLowerCase();g.innerHTML=cards(SER.filter(s=>(c==='All'||s[2]===c)&&(s[0]+s[1]).toLowerCase().includes(q)))};
+$('#q').oninput=r;$$('#cats .chip').forEach(b=>{b.classList.toggle('on',b.dataset.cat==='All');b.onclick=()=>{c=b.dataset.cat;$$('#cats .chip').forEach(x=>x.classList.toggle('on',x===b));r()}});r()}
+function misc(){
+$$('[data-reg]').forEach(b=>b.onclick=()=>{$('#rf').hidden=false;$('#rn').textContent=EV[b.dataset.reg][2];$('#rf').scrollIntoView({behavior:'smooth'})});
+if($('#sgh'))$('#sgh').innerHTML=cards(SER.slice(0,3));if($('#sgl'))$('#sgl').innerHTML=cards(SER.slice(3));
+if($('#tes')){let i=0;const sh=d=>{const t=TES[i=(i+d+TES.length)%TES.length];$('#tes').innerHTML=`<small style="color:var(--gold)">${t[2]}</small><h3 style="font-size:2.2rem">${t[0]}</h3><p style="margin:10px 0">${t[3]}</p><small>${t[1]}</small>`;gsap.from('#tes',{x:d*40,opacity:0,duration:.6})};sh(0);$('#tn').onclick=()=>sh(1);$('#tp').onclick=()=>sh(-1)}
+if($('#ga')){let f='',a=0;const u=()=>$('#gs').textContent=f&&a?f+', $'+a:'choose a fund and amount';
+$$('#gc .chip').forEach(b=>b.onclick=()=>{f=b.dataset.cat;$$('#gc .chip').forEach(x=>x.classList.toggle('on',x===b));u()});
+$$('#ga .chip').forEach(b=>b.onclick=()=>{a=+b.dataset.a;$('#ca').value='';$$('#ga .chip').forEach(x=>x.classList.toggle('on',x===b));u()});
+$('#ca').oninput=e=>{a=+e.target.value;$$('#ga .chip').forEach(x=>x.classList.remove('on'));u()};
+$('#gb').onclick=()=>{$('#go').innerHTML=f&&a>0?'<div class="ok">Demo only: no payment was taken. In a real build, a payment provider’s hosted checkout would open here.</div>':'<div class="ok">Choose a fund and an amount first.</div>'}}
+const lf=$('#lf');if(lf)lf.onsubmit=e=>{e.preventDefault();if(lf.p.value==='demo'){sessionStorage.setItem('klimA','1');route()}else $('.err',lf).textContent='Use password: demo'};
+if($('#lo'))$('#lo').onclick=()=>{sessionStorage.removeItem('klimA');route()};
+if($('#rs'))$('#rs').onclick=()=>{['prayers','testimonies','registrations','contacts','subs'].forEach(k=>put(k,[]));route()};
+$$('[data-ap],[data-rj]').forEach(b=>b.onclick=()=>{const a=get('testimonies',[]),i=b.dataset.ap??b.dataset.rj;a[i].status=b.dataset.ap!==undefined?'approved':'rejected';put('testimonies',a);route()});
+$$('[data-w]').forEach(b=>b.onclick=()=>{if(!window.loadSer){location.hash='sermons';setTimeout(()=>loadSer(b.dataset.w),700)}else loadSer(b.dataset.w)})}
+function anim(){if(reduce)return;gsap.registerPlugin(ScrollTrigger);ScrollTrigger.getAll().forEach(t=>t.kill());
+const h=$('.hero h1');if(h)gsap.from('.hero h1 b',{yPercent:110,duration:1.2,stagger:.18,ease:'power4.out',delay:.2});
+gsap.from('.rv',{opacity:0,y:20,duration:.9,stagger:.15,delay:.9});
+gsap.to('.beam',{x:60,duration:6,yoyo:true,repeat:-1,ease:'sine.inOut',stagger:1});
+$$('.mask').forEach(m=>gsap.from(m,{clipPath:'inset(0 0 100% 0)',duration:1.4,ease:'power3.inOut',scrollTrigger:{trigger:m,start:'top 85%'}}));
+$$('[data-n]').forEach(n=>{const o={v:0};gsap.to(o,{v:+n.dataset.n,duration:2,snap:{v:1},scrollTrigger:{trigger:n,start:'top 90%'},onUpdate:()=>n.textContent=o.v})});
+$$('.sc,.times div,.ev').forEach(e=>gsap.from(e,{opacity:0,y:30,duration:.7,scrollTrigger:{trigger:e,start:'top 92%'}}));
+const hs=$('#hs');if(hs)gsap.from(hs.children,{x:120,opacity:0,stagger:.08,duration:.8,scrollTrigger:{trigger:hs,start:'top 80%'}});
+$$('.btn.fill').forEach(b=>{b.onmousemove=e=>{const r=b.getBoundingClientRect();gsap.to(b,{x:(e.clientX-r.left-r.width/2)*.15,y:(e.clientY-r.top-r.height/2)*.25,duration:.3})};b.onmouseleave=()=>gsap.to(b,{x:0,y:0,duration:.4})})}
+function cta(){$$('#app [data-img]').forEach(el=>{const i=new Image();i.onload=()=>{el.style.setProperty('--img','url('+el.dataset.img+')');el.classList.add('has')};i.src=el.dataset.img});
+$$('#app a.btn,#app a.chip,#app .hs a').forEach(a=>{a.href=WA;a.target='_blank';a.rel='noopener'})}
+function route(first){const k=(location.hash.slice(1)||'home'),pg=pages[k]||pages.home;
+$$('.links a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+k));$('#links').classList.remove('open');
+const go=()=>{$('#app').innerHTML=pg();window.scrollTo(0,0);bindForms();player();sermons();misc();cta();anim();if(window.ScrollTrigger)ScrollTrigger.refresh()};
+if(first||reduce)return go();gsap.timeline().to('#wipe',{y:0,duration:.45,ease:'power3.in'}).add(go).to('#wipe',{y:'-100%',duration:.5,ease:'power3.out'}).set('#wipe',{y:'100%'})}
+$('#burger').onclick=()=>{const o=$('#links').classList.toggle('open');$('#burger').setAttribute('aria-expanded',o)};
+$('#nl').onsubmit=e=>{e.preventDefault();const i=$('input',e.target),er=$('.err',e.target);if(!/^\S+@\S+\.\S+$/.test(i.value)){er.textContent='Enter a valid email address.';return}push('subs',{email:i.value});i.value='';er.textContent='Subscribed (demo).'};
+addEventListener('hashchange',()=>route());
+route(true);
+if(reduce)$('#curtain').remove();else gsap.timeline({delay:.4}).from('#curtain div',{opacity:0,letterSpacing:'.5em',duration:1}).to('#curtain',{yPercent:-100,duration:.9,ease:'power4.inOut',delay:.3}).set('#curtain',{display:'none'});
+</script></body></html>
